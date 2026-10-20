@@ -52,6 +52,33 @@ a{color:#153a70}
 </ul>
 <p><strong>Dica de estudo:</strong> Leia os termos em inglês e tente lembrar o significado antes de olhar a tradução.</p>
 </section>
+
+<section class="card">
+<h2>📝 Revisão da Aula 1</h2>
+<p>Leia a pergunta em inglês e escolha a resposta correta.</p>
+
+<p><strong>Which principle means that everyone must obey the law?</strong></p>
+<p>Tradução: Qual princípio significa que todos devem obedecer à lei?</p>
+
+<button class="option" onclick="review(this,false)">Individual liberty</button>
+<button class="option" onclick="review(this,true)">Rule of law</button>
+<button class="option" onclick="review(this,false)">Democracy</button>
+
+<p id="review-result" aria-live="polite"></p>
+</section>
+
+<script>
+function review(button,correct){
+  const options=button.parentElement.querySelectorAll('.option');
+  options.forEach(b=>b.disabled=true);
+  button.classList.add(correct?'correct':'wrong');
+  document.getElementById('review-result').textContent=
+    correct
+    ? '✅ Correto! Rule of law significa Estado de Direito: todos estão sujeitos à lei.'
+    : '❌ A resposta correta é Rule of law. Revise o significado de Estado de Direito.';
+}
+</script>
+  
 </main>
 <script>
 function answer(button,correct){
